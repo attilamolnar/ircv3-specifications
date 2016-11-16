@@ -50,12 +50,16 @@ privileged key when the client has no privilege to access that key at the time
 of subscription.
 
 If a client is subscribed to a metadata key and has adequate privileges to get
-notifications about that key then it gets METADATA events about the key as
-described [here](http://ircv3.net/specs/core/metadata-3.2.html#metadata-notifications).
+notifications about that key then the server MUST send METADATA events about
+the key as described [here](http://ircv3.net/specs/core/metadata-3.2.html#metadata-notifications).
 
-If a client is not subscribed to a metadata key then it will not get METADATA
-events about it, however the client can use `METADATA GET`, `METADATA LIST` or
-other means available to obtain the value of the key.
+If a client is not subscribed to a metadata key then the server MUST NOT send
+METADATA events about that key to the client, however the client can use
+`METADATA GET`, `METADATA LIST` or other means available to obtain the value
+of the key.
+
+Clients MUST be prepared to handle METADATA events about keys they are not
+subscribed to, perhaps by simply ignoring such METADATA events.
 
 By default, the client is not subscribed to any keys.
 
