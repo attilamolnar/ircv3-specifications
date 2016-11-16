@@ -9,6 +9,17 @@ copyrights:
     email: "attilamolnar@hush.com"
 ---
 
+## Notes for implementing work-in-progress version
+
+This is a work-in-progress specification.
+
+Software implementing this work-in-progress specification MUST NOT use the
+unprefixed `metadata-notify-2` capability name. Instead, implementations SHOULD
+use the `draft/metadata-notify-2` capability name to be interoperable with other
+software implementing a compatible work-in-progress version.
+
+The final version of the specification will use an unprefixed capability name.
+
 ## Description
 
 This specification extends the existing [metadata v3.2 specification](http://ircv3.net/specs/core/metadata-3.2.html).
