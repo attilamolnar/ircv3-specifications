@@ -179,7 +179,7 @@ If both are available, the new metadata notify cap SHOULD be used.
 ## Examples
 
 These examples show the labels of the numerics (e.g. `RPL_METADATASUBOK`)
-instead of their number (e.g. `770`) in order to aid understanding.
+instead of their number (e.g. `775`) in order to aid understanding.
 In a real implementation, the messages always contain the number of numerics,
 not a label.
 
