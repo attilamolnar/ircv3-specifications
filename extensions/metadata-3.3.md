@@ -45,9 +45,9 @@ to be subscribed to.
 
 A client can either be subscribed to a key, or not subscribed to it.
 
-The server MUST allow a client to subscribe to any valid keys, even to
-privileged keys when the client has no privilege to access that key at
-the time of subscription.
+The server MUST allow a client to subscribe to any valid key, even to a
+privileged key when the client has no privilege to access that key at the time
+of subscription.
 
 If a client is subscribed to a metadata key and has adequate privileges to get
 notifications about that key then it gets METADATA events about the key as
