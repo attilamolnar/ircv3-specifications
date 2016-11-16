@@ -147,10 +147,10 @@ is not subscribed to.
 
 | No. | Label                       | Format                            |
 | --- | --------------------------- | ----------------------------------|
-| 770 | `RPL_METADATASUBOK`         | `:<Key1> [<Key2> ...]`            |
-| 771 | `RPL_METADATAUNSUBOK`       | `:<Key1> [<Key2> ...]`            |
-| 772 | `RPL_METADATASUBS`          | `:<Key1> [<Key2> ...]`            |
-| 773 | `ERR_METADATATOOMANYSUBS`   | `<Key>`                           |
+| 775 | `RPL_METADATASUBOK`         | `:<Key1> [<Key2> ...]`            |
+| 776 | `RPL_METADATAUNSUBOK`       | `:<Key1> [<Key2> ...]`            |
+| 777 | `RPL_METADATASUBS`          | `:<Key1> [<Key2> ...]`            |
+| 778 | `ERR_METADATATOOMANYSUBS`   | `<Key>`                           |
 
 ### RPL_METADATASUBS
 
