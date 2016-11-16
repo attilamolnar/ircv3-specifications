@@ -1,6 +1,7 @@
 ---
 title: IRCv3.3 Metadata
 layout: spec
+work-in-progress: true
 copyrights:
   -
     name: "Attila Molnar"
@@ -14,14 +15,15 @@ This specification extends the existing [metadata v3.2 specification](http://irc
 
 ## Metadata notify v2
 
-This document describes the `metadata-notify-2` extension.
+This document describes the `draft/metadata-notify-2` capability.
 In contrast to `metadata-notify`, where clients get METADATA events for all
-keys, with `metadata-notify-2` clients need to explicitly subscribe to metadata
+keys, clients using the new capability need to explicitly subscribe to metadata
 keys they are interested in.
 
 ### Capability value
 
-The value of the `metadata-notify-2` capability MUST have the following format:
+The value of the metadata notify capability introduced in this document MUST
+have the following format:
 
     [<anything>,]maxsub=<N>[,<anything>]`
 
@@ -150,18 +152,18 @@ subscribed to.
 
 ## Compatibility with `metadata-notify`
 
-It is pointless to use `metadata-notify-2` and `metadata-notify` (as described
-in the [metadata v3.2 specification](http://ircv3.net/specs/core/metadata-3.2.html))
+It is pointless to use the new metadata notify cap described in this document
+and `metadata-notify` (as described in the [metadata v3.2 specification](http://ircv3.net/specs/core/metadata-3.2.html))
 together.
 
 This is because `metadata-notify` implicitly subscribes the client to all keys,
-while `metadata-notify-2` requires the client to tell the keys it wants to
+while metadata notify v2 requires the client to tell the keys it wants to
 subscribe to.
 
 Servers and clients MAY support both of the mentioned extensions, but MUST NOT
 negotiate both of them at the same time in the same connection.
 
-If both are available, `metadata-notify-2` SHOULD be preferred.
+If both are available, the new metadata notify cap SHOULD be used.
 
 ## Examples
 
@@ -402,9 +404,9 @@ Twice:
 ### Capability value in `CAP LS` 1 
 
     C: CAP LS 302
-    S: CAP * LS :userhost-in-names metadata-notify-2=foo,maxsub=50,bar multi-prefix
+    S: CAP * LS :userhost-in-names draft/metadata-notify-2=foo,maxsub=50,bar multi-prefix
 
 ### Capability value in `CAP LS` 2
 
     C: CAP LS 302
-    S: CAP * LS :metadata-notify-2=maxsub=25 multi-prefix invite-notify
+    S: CAP * LS :draft/metadata-notify-2=maxsub=25 multi-prefix invite-notify
