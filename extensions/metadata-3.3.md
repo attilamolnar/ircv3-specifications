@@ -189,7 +189,7 @@ not a label.
 
 All examples begin with the client not being subscribed to any keys.
 
-### Basic subscriping and unsubscribing
+### Basic subscribing and unsubscribing
 
     C: METADATA * SUB avatar website foo bar
     S: :irc.example.com RPL_METADATASUBOK modernclient :avatar website foo bar
