@@ -1,5 +1,5 @@
 ---
-title: IRCv3.3 Metadata
+title: Metadata
 layout: spec
 work-in-progress: true
 copyrights:
