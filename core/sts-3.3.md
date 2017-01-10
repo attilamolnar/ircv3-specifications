@@ -104,6 +104,24 @@ When the client sees the STS capability advertised over a non-secure
 connection, it MUST first establish a secure connection and confirm that the
 STS capability is still present.
 
+It is possible that the client receives the STS policy advertisement in a
+`CAP NEW` message over a non-secure connection that is not in the CAP
+negotiation phase. This can happen for example if a server starts advertising
+an STS policy after the client has already registered on the server.
+In this case, the client MAY ignore the policy advertisement and not attempt to
+establish a secure connection immediately.
+The rationale for the previously described behavior is that disconnecting users
+in the middle of their activity is not user friendly. It is expected that the
+server will also advertise the policy the next time the client reconnects and
+the client will receive the policy at that point.
+However, bots can choose to switch to a secure connection immediately upon
+seeing the policy in `CAP NEW`.
+
+However, if the client receives the STS policy advertisement in a `CAP NEW`
+message over a secure connection that is not in the CAP negotiation phase, it
+MUST process it the same as if it had received it during the CAP negotiation
+phase over a secure connection.
+
 Once the client has confirmed that the STS capability is indeed offered over
 a secure connection, it then MUST only attempt secure connections to the
 server from now on until the policy expires (see the `duration` key).
